@@ -14,9 +14,9 @@ resource "aws_sns_topic" "experian_file_notifications" {
 ## Subscriptions
 ##############################
 
-# Email Subscription for Nightly Batch
+# Email Subscription for Experian Files
 resource "aws_sns_topic_subscription" "experian_file_email" {
-  topic_arn = aws_sns_topic.nightly_batch.arn
+  topic_arn = aws_sns_topic.experian_file.arn
   protocol  = "email"
   endpoint  = "pradeepbyreddy140298@gmail.com"
 }
@@ -28,7 +28,7 @@ resource "aws_sns_topic_subscription" "experian_file_email" {
 #   endpoint  = element(
 #     [
 #       "pradeepbyreddy140298@gmail.com",
-#       "arn:aws:sqs:us-east-1:123456789012:nightly_batch_notifications_queue"
+#       "arn:aws:sqs:us-east-1:123456789012:experian_file_notifications_queue"
 #     ],
 #     count.index
 #   )
