@@ -2,8 +2,8 @@
 ## SNS Topics
 #####################
 
-resource "aws_sns_topic" "experian_file_notifications" {
-  name = "experian_file_notifications"
+resource "aws_sns_topic" "experian_inbound_sns" {
+  name = "experian_inbound_file_notifications"
   tags = {
     Owner        = "Pradeep_Reddy_B"
     Environment  = "QA"
@@ -15,8 +15,8 @@ resource "aws_sns_topic" "experian_file_notifications" {
 ##############################
 
 # Email Subscription for Experian Files
-resource "aws_sns_topic_subscription" "experian_file_email" {
-  topic_arn = aws_sns_topic.experian_file_notifications.arn
+resource "aws_sns_topic_subscription" "experian_inbound_email" {
+  topic_arn = aws_sns_topic.experian_inbound_file_notifications.arn
   protocol  = "email"
   endpoint  = "pradeepbyreddy140298@gmail.com"
 }
