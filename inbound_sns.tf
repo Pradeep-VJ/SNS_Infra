@@ -16,7 +16,7 @@ resource "aws_sns_topic" "experian_inbound_sns" {
 
 # Email Subscription for Experian Files
 resource "aws_sns_topic_subscription" "experian_inbound_email" {
-  topic_arn = aws_sns_topic.experian_inbound_file_notifications.arn
+  topic_arn = aws_sns_topic.experian_inbound_sns.arn
   protocol  = "email"
   endpoint  = "pradeepbyreddy140298@gmail.com"
 }
